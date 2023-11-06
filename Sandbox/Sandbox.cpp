@@ -1,3 +1,4 @@
+#define MAIN
 #include "WhaleDoneEngine.h"
 
 

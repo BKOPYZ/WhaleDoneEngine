@@ -3,6 +3,10 @@
 // ---- this is what user in the sandbox can use
 #include "Application.h"
 #include "wdpch.h"
+#include "Scene.h"
 
 //--entry point
-#include "EntryPoint.h"
+
+#ifdef MAIN
+    #include "EntryPoint.h"
+#endif // DEBUG
