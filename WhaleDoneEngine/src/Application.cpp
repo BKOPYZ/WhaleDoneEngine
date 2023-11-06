@@ -14,18 +14,21 @@ namespace wd{
         else{
             s_Instance = this;
             m_IsRunning = true;
+            // Get instance of the manager after this line
             m_Renderer = Renderer::GetInstance();
             m_Timer = Timer::GetInstance();
             m_InputManager = InputManager::GetInstance();
-
+            m_SceneManager = SceneManager::GetInstance();
         }
     }
 
     Application::~Application()
     {
+        // Release the manager after this line
         m_Renderer->Release();
         m_Timer->Release();
         m_InputManager->Release();
+        m_SceneManager->Release();
     }
 
     void Application::Run()
@@ -61,6 +64,7 @@ namespace wd{
 
     void Application::OnUpdate()
     {
+        m_SceneManager->OnUpdate();
     }
 
     void Application::OnLateUpdate()
@@ -79,6 +83,7 @@ namespace wd{
             default:
                 break;  
         }
+        m_SceneManager->OnEvent(event);
     }
 
     void Application::OnRender()
@@ -86,6 +91,7 @@ namespace wd{
         m_Renderer->ClearBackBuffer();
         // scene/layer manager here to do the scene things 
         //TODO: still have to decide which system we gonna use in this engine (layer scene)
+        m_SceneManager->OnRender();
 
         m_Renderer->OnRender(); 
         
