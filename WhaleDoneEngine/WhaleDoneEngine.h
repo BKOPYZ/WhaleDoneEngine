@@ -4,6 +4,7 @@
 #include "Application.h"
 #include "wdpch.h"
 #include "Scene.h"
+#include <SDL2/SDL.h>
 
 //--entry point
 

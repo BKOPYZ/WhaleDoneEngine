@@ -2,6 +2,7 @@
 #include "Renderer.h"
 #include "base.h"
 
+
 namespace wd{
     Renderer* Renderer::s_Instance = nullptr;
     bool Renderer::m_Initailized = false;
@@ -54,6 +55,7 @@ namespace wd{
 		}
 
 		//Setting the renderer's clear color to white
+        SDL_SetRenderDrawColor(m_Renderer,255,255,255,255);
 		
         return true;
     }
@@ -113,6 +115,8 @@ namespace wd{
 
     void Renderer::ClearBackBuffer()
     {
+        // tentative
+        SDL_SetRenderDrawColor(m_Renderer, 255, 255, 255,255);
         SDL_RenderClear(m_Renderer);
     }
     

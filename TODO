@@ -9,3 +9,7 @@ Point to fix / think
 - consider whether to put renderer for every scene
 - find solution to render object in scene
 - layer system
+- fix setcolordrawcolor
+- object
+- object properties
+- clearbackbuffer
