@@ -2,6 +2,7 @@
 #include "Renderer.h"
 #include "Timer.h"
 #include "InputManager.h"
+#include "SceneManager.h"
 
 namespace wd{
     class Application{
@@ -30,6 +31,9 @@ namespace wd{
             InputManager* m_InputManager;
 
             SDL_Event event;
+        
+        protected:
+            SceneManager* m_SceneManager;
             
 
 

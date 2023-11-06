@@ -2,3 +2,10 @@
 2. Scene
 3. Think about, how to render from the inner
 4.
+
+
+-------------------------------
+Point to fix / think 
+- consider whether to put renderer for every scene
+- find solution to render object in scene
+- layer system
