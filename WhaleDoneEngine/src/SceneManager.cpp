@@ -26,7 +26,7 @@ namespace wd{
     void SceneManager::Release()
     {
         delete s_Instance;
-        s_Instance;
+        s_Instance = nullptr;
     }
     SceneManager *SceneManager::GetInstance()
     {

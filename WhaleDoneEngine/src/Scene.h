@@ -13,13 +13,13 @@ namespace wd{
     class Scene{
         public:
             virtual ~Scene(){};
-            Scene(){m_Renderer = Renderer::GetInstance();};
+            Scene(){m_Renderer = Renderer::GetInstance();}
 
-            virtual void OnUpdate(){};
-            virtual void OnEvent(SDL_Event& event){};
-            virtual void OnRender(){};
-            virtual std::unordered_map<std::string, int> GetDataDict(){};
-            virtual std::vector<SDL_Rect> GetObjects(){};
+            virtual void OnUpdate(){}
+            virtual void OnEvent(SDL_Event& event){}
+            virtual void OnRender(){}
+            virtual std::unordered_map<std::string, int> GetDataDict(){}
+            virtual std::vector<SDL_Rect> GetObjects(){}
 
         protected:
             Renderer* m_Renderer;
