@@ -23,12 +23,20 @@ namespace wd{
             void SetColor(Uint8 r,Uint8 g,Uint8 b,Uint8 a);
 
             void FillRect(SDL_Rect* rect);
+            
+            void FillRectF(SDL_FRect* frect);
 
             void DrawRect(SDL_Rect* rect);
+
+            void DrawRectF(SDL_FRect* frect);
+
+            void DrawPoint(const int& x,const int& y);
 
             void DrawLine(const int& x1, const int& y1, const int& x2, const int& y2);
 
             void ClearBackBuffer();
+
+            void ClearBackBufferWithBackGround(Uint8 r,Uint8 g,Uint8 b,Uint8 a);
 
             void OnRender();
 

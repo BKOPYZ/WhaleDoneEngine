@@ -103,9 +103,23 @@ namespace wd{
         SDL_RenderFillRect(m_Renderer, rect);
     }
 
+    void Renderer::FillRectF(SDL_FRect *frect)
+    {
+    }
+
     void Renderer::DrawRect(SDL_Rect *rect)
     {
         SDL_RenderDrawRect(m_Renderer,rect);
+    }
+
+    void Renderer::DrawRectF(SDL_FRect *frect)
+    {
+        SDL_RenderDrawRectF(m_Renderer, frect);
+    }
+
+    void Renderer::DrawPoint(const int& x,const int&y)
+    {
+        SDL_RenderDrawPoint(m_Renderer,x,y);
     }
 
     void Renderer::DrawLine(const int &x1, const int &y1, const int &x2, const int &y2)
@@ -116,10 +130,17 @@ namespace wd{
     void Renderer::ClearBackBuffer()
     {
         // tentative
-        SDL_SetRenderDrawColor(m_Renderer, 255, 255, 255,255);
-        SDL_RenderClear(m_Renderer);
+
+        ClearBackBufferWithBackGround(0,0,0,0);
     }
-    
+
+    void Renderer::ClearBackBufferWithBackGround(Uint8 r, Uint8 g, Uint8 b, Uint8 a)
+    {
+        SDL_SetRenderDrawColor(m_Renderer,r,g,b,a);
+        SDL_RenderClear(m_Renderer);
+        
+    }
+
     void Renderer::OnRender()
     {  
         SDL_RenderPresent(m_Renderer);
