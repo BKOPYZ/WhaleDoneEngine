@@ -5,11 +5,17 @@
 
 
 -------------------------------
+07/11
 Point to fix / think 
-- consider whether to put renderer for every scene
-- find solution to render object in scene
+- consider whether to put renderer for every scene -done
+- find solution to render object in scene -done
 - layer system
-- fix setcolordrawcolor
-- object
-- object properties
+- fix setcolordrawcolor - dont
+- object - don
+- object properties -done
 - clearbackbuffer -done
+
+08/11
+- add texturemanager
+- declare the constructor of object
+- delete every include wdpch in every cpp file
