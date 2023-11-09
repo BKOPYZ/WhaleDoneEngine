@@ -2,6 +2,7 @@
 #include "SDL2/SDL.h"
 #include "SDL2/SDL_image.h"
 #include <string>
+#include <unordered_map>
 
 namespace wd{
     class Renderer{
@@ -12,9 +13,11 @@ namespace wd{
 
             static void Release();
 
+            SDL_Renderer* GetRenderer() const {return m_Renderer;}
+
             bool Init(const std::string& title, const int& width, const int& height,const Uint32& flag);
             
-            SDL_Texture* CreateTexture(const std::string& path);    
+            SDL_Texture* GetTexture(const std::string& path);
 
             void DrawTexture(SDL_Texture* texture,SDL_Rect* clipRect = NULL, SDL_Rect* destRect = NULL, const float& angle = 0.0f,SDL_RendererFlip flip = SDL_FLIP_NONE );
             
@@ -41,6 +44,10 @@ namespace wd{
             void OnRender();
 
         private:
+            void CreateTexture(const std::string& path); 
+            
+            std::unordered_map<std::string , SDL_Texture*> m_Textures;
+
             int m_ScreenWidth;
             int m_ScreenHeight;
             Uint32 m_Flag;
