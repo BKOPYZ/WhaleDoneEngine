@@ -3,6 +3,8 @@ project(WhaleDoneEngine)
 set(SANDBOXSOURCE
     ${CMAKE_CURRENT_SOURCE_DIR}/Sandbox.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/TestScene.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/ParticalObject.cpp
+    
     )
 
 add_executable(Sandbox ${SANDBOXSOURCE})

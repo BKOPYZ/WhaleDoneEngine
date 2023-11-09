@@ -3,6 +3,11 @@
 3. Think about, how to render from the inner
 4.
 
+- delete every include wdpch in every cpp file
+- optimize
+- perfect the indent
+- tune
+- do the math library 
 
 -------------------------------
 07/11
@@ -16,6 +21,11 @@ Point to fix / think
 - clearbackbuffer -done
 
 08/11
-- add texturemanager
-- declare the constructor of object
-- delete every include wdpch in every cpp file
+- add texturemanager - done
+- declare the constructor of object -done
+----------------------------------
+
+
+09/11
+- add method to be able to target where the assets dir ise
+- add method to crop the png for object

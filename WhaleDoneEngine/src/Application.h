@@ -3,6 +3,7 @@
 #include "Timer.h"
 #include "InputManager.h"
 #include "SceneManager.h"
+#include "AssetManager.h"
 
 namespace wd{
     class Application{
@@ -29,6 +30,7 @@ namespace wd{
             Renderer* m_Renderer;
             Timer* m_Timer;
             InputManager* m_InputManager;
+            AssetManager* m_AssetManager;
 
             SDL_Event event;
         

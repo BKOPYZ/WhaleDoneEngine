@@ -11,15 +11,15 @@ namespace wd{
     class Object{
         public:
             Object();
-            Object(const std::string& path, float x, float y, float w, float h, float scale, float rotation, Color color, bool isrender);
+            Object(const std::string& path, float x, float y, float w, float h, float scale = 1, float rotation = 0.0f, Color color = {255,255,255,255}, bool isrender = true);
 
-            virtual void Update();
-            virtual void Event();
-            virtual void Render();
+            virtual void Update(){};
+            virtual void Event(SDL_Event& event){};
+            virtual void Render(){};
         // not finish
 
 
-        private:
+        protected:
             bool m_IsRender;
             SDL_FRect m_ColRect;
             SDL_FRect m_Srect;

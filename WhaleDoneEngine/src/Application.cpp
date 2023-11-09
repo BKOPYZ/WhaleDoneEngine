@@ -19,6 +19,8 @@ namespace wd{
             m_Timer = Timer::GetInstance();
             m_InputManager = InputManager::GetInstance();
             m_SceneManager = SceneManager::GetInstance();
+            m_AssetManager = AssetManager::GetInstance();
+            std::cout << "Initialize success" << std::endl;
         }
     }
 
@@ -29,6 +31,7 @@ namespace wd{
         m_Timer->Release();
         m_InputManager->Release();
         m_SceneManager->Release();
+        m_AssetManager->Release();
     }
 
     void Application::Run()
@@ -88,7 +91,7 @@ namespace wd{
 
     void Application::OnRender()
     {
-        m_Renderer->ClearBackBuffer();
+        m_Renderer->ClearBackBufferWithBackGround(255,255,255,255);
         // scene/layer manager here to do the scene things 
         //TODO: still have to decide which system we gonna use in this engine (layer scene)
         m_SceneManager->OnRender();

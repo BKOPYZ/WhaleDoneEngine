@@ -5,6 +5,8 @@
 #include <vector>
 #include <string>
 
+#include "ParticalObject.h"
+
 
 class TestScene : public wd::Scene{
     public:
@@ -18,8 +20,9 @@ class TestScene : public wd::Scene{
         std::vector<SDL_Rect> GetObjects() override;
 
     private:
-        SDL_Rect m_TestRect{0,0,0,0};
+        // SDL_Rect m_TestRect{0,0,0,0};
         std::unordered_map<std::string, int> dict;
+        std::vector<ParticalObject*> m_Objects;
         
 
 

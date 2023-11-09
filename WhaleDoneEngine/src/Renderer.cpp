@@ -60,14 +60,6 @@ namespace wd{
         return true;
     }
 
-    SDL_Texture *Renderer::GetTexture(const std::string& path)
-    {
-        if(m_Textures.find(path) == m_Textures.end()){
-            CreateTexture(path);
-        }
-        return m_Textures[path];
-    }
-
     void Renderer::Release()
     {
         delete s_Instance;
@@ -76,7 +68,7 @@ namespace wd{
         m_Initailized = false;
     }
 
-    void Renderer::CreateTexture(const std::string &path)
+    SDL_Texture* Renderer::CreateTexture(const std::string &path)
     {
         SDL_ClearError();
         
@@ -87,7 +79,7 @@ namespace wd{
         std::cout << "2 " <<SDL_GetError() << std::endl;
 
         SDL_FreeSurface(tempSurface);
-        m_Textures[path] = texture;
+        return texture;
     }
 
     void Renderer::DrawTexture(SDL_Texture *texture, SDL_Rect *clipRect, SDL_Rect *destRect, const float &angle, SDL_RendererFlip flip)
@@ -112,6 +104,8 @@ namespace wd{
 
     void Renderer::FillRectF(SDL_FRect *frect)
     {
+        SDL_RenderFillRectF(m_Renderer, frect);
+
     }
 
     void Renderer::DrawRect(SDL_Rect *rect)

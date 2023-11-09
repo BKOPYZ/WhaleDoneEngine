@@ -1,4 +1,4 @@
-#include "../wdpch.h"
+#include "Renderer.h"
 #include "AssetManager.h"
 namespace wd{
     AssetManager* AssetManager::m_Instance = nullptr;
@@ -30,8 +30,9 @@ namespace wd{
     {
         std::string fullpath = m_Path + "/assets/png/" + name;
         std::cout << fullpath <<std::endl;
-        if(m_TextureMap[fullpath] == nullptr){
-            m_TextureMap[fullpath] = Renderer::GetInstance()->CreateTexture(fullpath);
+        Renderer* temp = Renderer::GetInstance();
+        if(m_TextureMap[fullpath] == nullptr && temp!= nullptr ){
+            m_TextureMap[fullpath] = temp->CreateTexture(fullpath);
         }
         return m_TextureMap[fullpath];
     }

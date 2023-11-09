@@ -6,6 +6,8 @@
 #include "Scene.h"
 #include <SDL2/SDL.h>
 #include "Object.h"
+#include "AssetManager.h"
+#include "Renderer.h"
 
 //--entry point
 
