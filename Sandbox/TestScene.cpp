@@ -9,9 +9,9 @@ TestScene::TestScene()
     // m_TestRect.w = 20;
     // m_TestRect.h = 20;
     for(int i =0 ; i < 100 ; i++){
-        float x = rand()%900, y = rand()%600, w = rand()%25;
+        float x = rand()%900, y = rand()%600, w = rand()%25, vyy = rand()%25;
         ParticalObject* temp = new ParticalObject("",x,y,w,w);
-        float vx = rand()%15 / 10.0 * pow(-1,(rand()%2)),vy = rand()%15 /10.0* pow(-1,(rand()%2));
+        float vx = (25 - w)/ 10.0 * pow(-1,(rand()%2)),vy = (25 - w)/10.0* pow(-1,(rand()%2));
         temp->SetVelocity(vx,vy);
         m_Objects.emplace_back(temp);
     }
