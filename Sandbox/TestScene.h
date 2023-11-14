@@ -11,7 +11,7 @@
 class TestScene : public wd::Scene{
     public:
         TestScene();
-        ~TestScene () override{};
+        ~TestScene () override{delete m_CollisionManager; m_CollisionManager = nullptr;}
         
         void OnUpdate() override ;
         void OnEvent(SDL_Event& event) override;
@@ -21,8 +21,9 @@ class TestScene : public wd::Scene{
 
     private:
         // SDL_Rect m_TestRect{0,0,0,0};
+        wd::CollisionManager* m_CollisionManager;
         std::unordered_map<std::string, int> dict;
-        std::vector<ParticalObject*> m_Objects;
+        std::vector<wd::Object*> m_Objects;
         
 
 

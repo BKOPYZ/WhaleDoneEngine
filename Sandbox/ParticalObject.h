@@ -2,7 +2,7 @@
 #include "WhaleDoneEngine.h"
 
 
-class ParticalObject : wd::Object
+class ParticalObject : public wd::Object
 {
 public:
     ParticalObject();
@@ -20,7 +20,7 @@ public:
 
 
 private:
-    std::pair<float, float> m_Velocity;
+    
 
 
     /* data */

@@ -11,13 +11,13 @@ ParticalObject::ParticalObject(const std::string &path, float x, float y, float 
 void ParticalObject::Update()
 {
     if(m_Drect.x > 900 || m_Drect.x < 0){
-        m_Velocity.first *= -1;
+        m_Velocity.x *= -1;
     }
     if(m_Drect.y > 600 || m_Drect.y < 0){
-        m_Velocity.second *= -1;
+        m_Velocity.y *= -1;
     }
-    m_Drect.x += m_Velocity.first;
-    m_Drect.y += m_Velocity.second;
+    m_Drect.x += m_Velocity.x;
+    m_Drect.y += m_Velocity.y;
     
 }
 
@@ -36,6 +36,6 @@ void ParticalObject::Render()
 
 void ParticalObject::SetVelocity(float x, float y)
 {
-    m_Velocity.first = x;
-    m_Velocity.second = y;
+    m_Velocity.x = x;
+    m_Velocity.y = y;
 }

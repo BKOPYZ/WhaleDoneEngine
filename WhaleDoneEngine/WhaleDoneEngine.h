@@ -8,6 +8,7 @@
 #include "Object.h"
 #include "AssetManager.h"
 #include "Renderer.h"
+#include "CollisionManager.h"
 
 //--entry point
 

@@ -29,3 +29,6 @@ Point to fix / think
 09/11
 - add method to be able to target where the assets dir ise
 - add method to crop the png for object
+
+10/11
+- add camera class for moving object

@@ -15,6 +15,7 @@ namespace wd{
         m_Rotation = rotation;
         m_Color = color;
         m_IsRender = isrender;
+        m_Radius = m_Drect.h;
 
 
 
