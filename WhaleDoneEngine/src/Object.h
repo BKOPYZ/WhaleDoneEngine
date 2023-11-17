@@ -17,6 +17,8 @@ namespace wd{
             Vector2 GetPos() const {return {m_Drect.x,m_Drect.y}; }
             Vector2 GetSize() const {return {m_Drect.w,m_Drect.h};}
             Vector2 GetCenterPos() const {return {m_Drect.x + m_Drect.w/2, m_Drect.y + m_Drect.h/2};}
+            Vector2 GetVelecity() const {return m_Velocity;}
+            void SetVelocity(const Vector2& vec) {m_Velocity = vec;}
             void Transform(const Vector2& vec) {m_Drect.x + vec.x; m_Drect.y + vec.y;}
             float GetRadius() const {return m_Radius;}
             virtual void Update(){};

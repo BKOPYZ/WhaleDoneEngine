@@ -15,7 +15,6 @@ public:
 
     void Render() override;
 
-    void SetVelocity(float x, float y);
 
 
 

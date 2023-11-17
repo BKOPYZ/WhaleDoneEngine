@@ -13,9 +13,8 @@ TestScene::TestScene()
         float x = rand()%900, y = rand()%600, w = rand()%25, vyy = rand()%25;
         ParticalObject* temp = new ParticalObject("",x,y,w,w);
         float vx = (25 - w)/ 10.0 * pow(-1,(rand()%2)),vy = (25 - w)/10.0* pow(-1,(rand()%2));
-        temp->SetVelocity(vx,vy);
+        temp->SetVelocity({vx,vy});
         m_Objects.emplace_back(temp);
-        m_CollisionManager->AddObject(temp);
     }
     
 
@@ -32,10 +31,11 @@ void TestScene::OnUpdate()
     //     m_TestRect.y = -2;
     // }
     // std::cout << "x: " << m_TestRect.x << "y: " << m_TestRect.y << std::endl;
+    m_CollisionManager->Clear();
     for(unsigned int i = 0; i< m_Objects.size() ; ++i ){
         m_Objects[i]->Update();
+        m_CollisionManager->UpdatePos(m_Objects[i]);
     }
-    std::cout << "do it" << std::endl;
     m_CollisionManager->Update();
 
 }
